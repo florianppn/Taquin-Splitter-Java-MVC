@@ -4,6 +4,12 @@ import main.model.*;
 
 import java.awt.event.*;
 
+/**
+ * Représente le contrôleur de la souris.
+ *
+ * @author Florian Pépin
+ * @version 1.0
+ */
 public class MouseController implements MouseListener {
 
     private Taquin taquin;

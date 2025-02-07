@@ -9,7 +9,8 @@ import javax.swing.*;
 /**
  * Représente la vue de la grille de jeu.
  *
- *
+ * @author Florian Pépin
+ * @version 1.0
  */
 public class GridView extends JPanel implements ModelListener {
 
@@ -33,13 +34,17 @@ public class GridView extends JPanel implements ModelListener {
             for (int j = 0; j < this.taquin.getSize(); j++) {
                 int x = j * cellWidth;
                 int y = i * cellHeight;
-                g.drawRect(x, y, cellWidth, cellHeight);
-                g.drawString(Integer.toString(grid[i][j]), x + cellWidth / 2, y + cellHeight / 2);
+                g.setColor(Color.BLACK);
+                if (grid[i][j] == 0) {
+                    g.fillRect(x, y, cellWidth, cellHeight);
+                } else {
+                    g.drawRect(x, y, cellWidth, cellHeight);
+                    g.drawString(Integer.toString(grid[i][j]), x + cellWidth / 2, y + cellHeight / 2);
+                }
             }
         }
-        g.setColor(Color.GREEN);
+        g.setColor(Color.RED);
         g.drawRect(this.taquin.getClickX()*cellWidth, this.taquin.getClickY()*cellHeight, cellWidth, cellHeight);
-        g.setColor(Color.BLACK);
     }
 
     @Override
