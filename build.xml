@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="taquin" default="compile" basedir=".">
+    
+    <description>Builds, tests, and runs the project.</description>
+
+    <property name="src.dir" value="src" />
+    <property name="build.dir" value="classes" />
+    <property name="doc.dir" value="doc" />
+    <property name="dist.dir" value="dist" />
+    <property name="doc.dir" value="doc" />
+    <property name="application" value="${dist.dir}/taquin.jar" />
+
+    <target name="compile" depends="clean">
+        <javac srcdir="${src.dir}" destdir="${build.dir}" debug="true" includeantruntime="false" />
+    </target>
+
+    <target name="clean">
+        <delete dir="${build.dir}" />
+        <mkdir dir="${build.dir}" />
+        <delete file="${application}" />
+    </target>
+
+    <target name="dist" depends="compile">
+        <jar destfile="${application}">
+            <fileset dir="${src.dir}/" includes="resources/image/*.png" />
+            <fileset dir="${build.dir}" includes="**"/>
+            <manifest>
+                <attribute name="Manifest-Version" value="1.0"/>
+                <attribute name="Created-By" value="Florian Pépin"/>
+                <attribute name="Main-Class" value="main.Main"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="javadoc">
+        <delete>
+            <fileset dir="${doc.dir}" includes="**"/>
+        </delete>
+        <javadoc destdir="${doc.dir}">
+            <packageset dir="${src.dir}" defaultexcludes="yes">
+                <exclude name="test/**" />
+            </packageset>
+        </javadoc>
+    </target>
+
+    <target name="run" depends="dist">
+      <java jar="${application}" fork="true" />
+    </target>
+
+</project>
