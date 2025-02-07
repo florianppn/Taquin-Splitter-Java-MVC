@@ -16,10 +16,11 @@ public class GUI extends JFrame {
         this.setSize(500, 500);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
-        this.setVisible(true);
 
-        this.addMouseListener(new MouseController(this.taquin));
         this.add(new GridView(this.taquin));
+        this.addMouseListener(new MouseController(this.taquin));
+
+        this.setVisible(true);
     }
 
 }

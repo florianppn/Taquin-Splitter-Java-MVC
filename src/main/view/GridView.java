@@ -26,18 +26,20 @@ public class GridView extends JPanel implements ModelListener {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.setColor(Color.BLACK);
         int[][] grid = this.taquin.getGrid();
-        int width = getWidth() / this.taquin.getSize();
-        int height = getHeight() / this.taquin.getSize();
+        int cellWidth = getWidth() / this.taquin.getSize();
+        int cellHeight = getHeight() / this.taquin.getSize();
         for (int i = 0; i < this.taquin.getSize(); i++) {
             for (int j = 0; j < this.taquin.getSize(); j++) {
-                int x = j * width;
-                int y = i * height;
-                g.drawRect(x, y, width, height);
-                g.drawString(Integer.toString(grid[i][j]), x + width / 2, y + height / 2);
+                int x = j * cellWidth;
+                int y = i * cellHeight;
+                g.drawRect(x, y, cellWidth, cellHeight);
+                g.drawString(Integer.toString(grid[i][j]), x + cellWidth / 2, y + cellHeight / 2);
             }
         }
+        g.setColor(Color.GREEN);
+        g.drawRect(this.taquin.getClickX()*cellWidth, this.taquin.getClickY()*cellHeight, cellWidth, cellHeight);
+        g.setColor(Color.BLACK);
     }
 
     @Override
