@@ -6,6 +6,12 @@ import main.utils.*;
 import java.awt.*;
 import javax.swing.*;
 
+/**
+ * Représente la vue des statistiques du jeu.
+ *
+ * @author Florian Pépin
+ * @version 1.0
+ */
 public class StatisticView extends JPanel implements ModelListener {
 
     private Taquin taquin;
@@ -19,12 +25,6 @@ public class StatisticView extends JPanel implements ModelListener {
         this.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         this.stats = new JLabel("Nombre de coups : " + this.taquin.getShot());
         this.add(this.stats);
-    }
-
-    @Override
-    protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        this.setBackground(Color.WHITE);
     }
 
     @Override
