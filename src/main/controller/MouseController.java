@@ -1,6 +1,7 @@
 package main.controller;
 
 import main.model.*;
+import main.view.*;
 
 import java.awt.event.*;
 
@@ -13,9 +14,11 @@ import java.awt.event.*;
 public class MouseController implements MouseListener {
 
     private Taquin taquin;
+    private GUI gui;
 
-    public MouseController(Taquin taquin) {
+    public MouseController(Taquin taquin, GUI gui) {
         this.taquin = taquin;
+        this.gui = gui;
     }
 
     @Override
@@ -25,6 +28,13 @@ public class MouseController implements MouseListener {
         this.taquin.setClickX(x);
         this.taquin.setClickY(y);
         this.taquin.move(y, x);
+        this.finishGame();
+    }
+
+    public void finishGame() {
+        if(this.taquin.isSolved()) {
+            this.gui.showEndGame();
+        }
     }
 
     public int getRow(MouseEvent e) {

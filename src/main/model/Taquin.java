@@ -17,6 +17,7 @@ public class Taquin extends AbstractListenableModel {
     private int clickX;
     private int clickY;
     private int[][] grid;
+    private Random random;
     private int shot;
 
     public Taquin(int size) {
@@ -26,6 +27,7 @@ public class Taquin extends AbstractListenableModel {
         this.clickX = -1;
         this.clickY = -1;
         this.grid = this.generateTable();
+        this.random = new Random();
         this.shot = 0;
     }
 
@@ -91,11 +93,13 @@ public class Taquin extends AbstractListenableModel {
     }
 
     public void shuffle(int n) {
-        Random random = new Random();
         for (int i = 0; i < n; i++) {
             List<Pair<Integer, Integer>> neighbors = this.getNeighbors(this.x0, this.y0);
-            int choice = random.nextInt(neighbors.size());
-            this.move(neighbors.get(choice).x, neighbors.get(choice).y);
+            int choice = this.random.nextInt(neighbors.size());
+            this.grid[this.x0][this.y0] = this.grid[neighbors.get(choice).x][neighbors.get(choice).y];
+            this.grid[neighbors.get(choice).x][neighbors.get(choice).y] = 0;
+            this.x0 = neighbors.get(choice).x;
+            this.y0 = neighbors.get(choice).y;
         }
     }
 
@@ -131,15 +135,15 @@ public class Taquin extends AbstractListenableModel {
 
     public boolean isSolved() {
         int value = 1;
-        for (int i = 0; i < this.size; i++) {
-            for (int j = 0; j < this.size; j++) {
+        for (int i = 0; i < this.size-1; i++) {
+            for (int j = 0; j < this.size-1; j++) {
                 if (this.grid[i][j] != value) {
                     return false;
                 }
                 value++;
             }
         }
-        return true;
+        return this.grid[this.size-1][this.size-1] == 0;
     }
 
 }

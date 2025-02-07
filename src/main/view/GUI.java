@@ -17,13 +17,24 @@ public class GUI extends JFrame {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(500, 500);
         this.setResizable(false);
-        this.setLocationRelativeTo(null);
+        this.showGame();
+        this.setVisible(true);
+    }
 
+    public void showGame() {
+        this.getContentPane().removeAll();
         this.add(new StatisticView(this.taquin), BorderLayout.NORTH);
         this.add(new GridView(this.taquin), BorderLayout.CENTER);
-        this.addMouseListener(new MouseController(this.taquin));
+        this.addMouseListener(new MouseController(this.taquin, this));
+        this.revalidate();
+        this.repaint();
+    }
 
-        this.setVisible(true);
+    public void showEndGame() {
+        this.getContentPane().removeAll();
+        this.add(new EndGameView(this.taquin), BorderLayout.CENTER);
+        this.revalidate();
+        this.repaint();
     }
 
 }
