@@ -17,14 +17,16 @@ public class Taquin extends AbstractListenableModel {
     private int clickX;
     private int clickY;
     private int[][] grid;
+    private int shot;
 
     public Taquin(int size) {
         this.size = size;
         this.x0 = size-1;
         this.y0 = size-1;
-        this.clickX = 0;
-        this.clickY = 0;
+        this.clickX = -1;
+        this.clickY = -1;
         this.grid = this.generateTable();
+        this.shot = 0;
     }
 
     public int[][] getGrid() {
@@ -49,6 +51,10 @@ public class Taquin extends AbstractListenableModel {
 
     public int getClickY() {
         return this.clickY;
+    }
+
+    public int getShot() {
+        return this.shot;
     }
 
     public void setX0(int x0) {
@@ -118,6 +124,7 @@ public class Taquin extends AbstractListenableModel {
             this.grid[x][y] = 0;
             this.x0 = x;
             this.y0 = y;
+            this.shot++;
             this.fireChange();
         }
     }
