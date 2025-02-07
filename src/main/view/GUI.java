@@ -1,5 +1,6 @@
 package main.view;
 
+import main.controller.MouseController;
 import main.model.*;
 
 import javax.swing.*;
@@ -17,6 +18,7 @@ public class GUI extends JFrame {
         this.setLocationRelativeTo(null);
         this.setVisible(true);
 
+        this.addMouseListener(new MouseController(this.taquin));
         this.add(new GridView(this.taquin));
     }
 
