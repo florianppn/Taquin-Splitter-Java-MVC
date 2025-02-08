@@ -17,22 +17,27 @@ Le but du jeu est de réorganiser les tuiles numérotées en les faisant glisser
 
 ## Comment lancer le jeu
 
-+ LINUX : lancer le fichier `dist/run.sh`.
+Les scripts permettant de lancer le jeu sont disponibles dans le dossier `dist`.
 
-+ WINDOWS : lancer le fichier `dist/run.bat`.
++ LINUX : lancer le fichier `./run.sh` pour lancer le jeu.
 
-+ Vous pouvez également lancer le jeu avec ANT via la commande `ant run-taquin`.
++ WINDOWS : lancer le fichier `./run.bat` pour lancer le jeu.
 
-+ Vous pouvez également recompiler le jeu avec ANT via la commande `ant dist-taquin`.
+Le fichier `build.xml` se trouve à la racine du projet. Il permet de compiler le projet via ANT.
+
++ ANT : utiliser la commande `ant run-taquin` pour lancer le jeu.
+
++ ANT : utiliser la commande `ant dist-taquin` pour recompiler le jeu.
 
 ## Comment mettre une image personnalisé
 
 J'ai mis à votre disposition un splitter permettant de découper une image en plusieurs morceaux. Il est disponible dans le dossier `dist`.
-Vous pouvez également le recompiler via ANT avec la commande `ant dist-splitter`.
 
 + LINUX : lancer le fichier `./splitter.sh <chemin image> <lignes> <columns>`.
 
 + WINDOWS : lancer le fichier `./splitter.bat <chemin image> <lignes> <columns>`.
+
++ ANT : utiliser la commande `ant dist-splitter` pour recompiler le splitter.
 
 + Exemple : `./splitter.sh /home/user/image.jpg 4 4`.
 + Exemple : `./splitter.bat C:\Users\user\image.jpg 4 4`.
