@@ -17,23 +17,26 @@ Le but du jeu est de réorganiser les tuiles numérotées en les faisant glisser
 
 ## Comment lancer le jeu
 
-+ LINUX : lancer le fichier `dist/run.sh`
++ LINUX : lancer le fichier `dist/run.sh`.
 
-+ WINDOWS : lancer le fichier `dist/run.bat`
++ WINDOWS : lancer le fichier `dist/run.bat`.
 
-+ Vous pouvez également lancer le jeu avec ANT via la commande `ant run-taquin`
++ Vous pouvez également lancer le jeu avec ANT via la commande `ant run-taquin`.
+
++ Vous pouvez également recompiler le jeu avec ANT via la commande `ant dist-taquin`.
 
 ## Comment mettre une image personnalisé
 
-J'ai mis à votre disposition un splitter permettant de découper une image en plusieurs morceaux.
+J'ai mis à votre disposition un splitter permettant de découper une image en plusieurs morceaux. Il est disponible dans le dossier `dist`.
+Vous pouvez également le recompiler via ANT avec la commande `ant dist-splitter`.
 
-+ LINUX : lancer le fichier `dist/splitter.sh <chemin image> <lignes> <columns>`
++ LINUX : lancer le fichier `./splitter.sh <chemin image> <lignes> <columns>`.
 
-+ WINDOWS : lancer le fichier `dist/splitter.bat <chemin image> <lignes> <columns>`
++ WINDOWS : lancer le fichier `./splitter.bat <chemin image> <lignes> <columns>`.
 
-+ Exemple : `dist/splitter.sh /home/user/image.jpg 4 4`
-+ Exemple : `dist/splitter.bat C:\Users\user\image.jpg 4 4`
-+ Exemple : `dist/splitter.bat image.jpg 4 4`
++ Exemple : `./splitter.sh /home/user/image.jpg 4 4`.
++ Exemple : `./splitter.bat C:\Users\user\image.jpg 4 4`.
++ Exemple : `./splitter.bat image.jpg 4 4`.
 
 ## Contribuer
 
