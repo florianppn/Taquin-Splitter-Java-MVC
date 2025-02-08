@@ -177,6 +177,18 @@ public class Taquin extends AbstractListenableModel {
         return this.grid[this.size-1][this.size-1] == 0;
     }
 
+    /**
+     * Réinitialise la grille de jeu.
+     */
+    public void reset() {
+        this.shot = 0;
+        this.x0 = this.size-1;
+        this.y0 = this.size-1;
+        this.grid = this.generateTable();
+        this.shuffle(100);
+        this.fireChange();
+    }
+
 }
 
 

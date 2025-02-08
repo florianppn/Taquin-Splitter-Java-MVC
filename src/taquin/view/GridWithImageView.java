@@ -15,7 +15,7 @@ import java.util.Objects;
  */
 public class GridWithImageView extends JPanel implements ModelListener {
 
-    private final static String PATH = "/resources/cutout_images/";
+    private final static String PATH = "/taquin/resources/cutout_images/4x4/";
     private Taquin taquin;
     private String imageUrl;
 

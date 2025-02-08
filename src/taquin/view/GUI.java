@@ -1,6 +1,6 @@
 package taquin.view;
 
-import taquin.controller.MouseController;
+import taquin.controller.*;
 import taquin.model.*;
 
 import javax.swing.*;
@@ -32,8 +32,12 @@ public class GUI extends JFrame {
      */
     public void showGame() {
         this.getContentPane().removeAll();
-        this.add(new StatisticView(this.taquin), BorderLayout.NORTH);
-        this.add(new GridWithImageView(this.taquin, "4x4/forest/"), BorderLayout.CENTER);
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(1,2));
+        panel.add(new StatisticView(this.taquin));
+        panel.add(new RetryButtonController(this.taquin, this));
+        this.add(panel, BorderLayout.NORTH);
+        this.add(new GridWithImageView(this.taquin, "forest/"), BorderLayout.CENTER);
         this.addMouseListener(new MouseController(this.taquin, this));
         this.revalidate();
         this.repaint();
@@ -44,6 +48,11 @@ public class GUI extends JFrame {
      */
     public void showEndGame() {
         this.getContentPane().removeAll();
+        JPanel panel = new JPanel();
+        panel.setLayout(new GridLayout(1,2));
+        panel.add(new StatisticView(this.taquin));
+        panel.add(new RetryButtonController(this.taquin, this));
+        this.add(panel, BorderLayout.NORTH);
         this.add(new EndGameView(this.taquin), BorderLayout.CENTER);
         this.revalidate();
         this.repaint();
