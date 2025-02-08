@@ -3,6 +3,7 @@ package splitter;
 import java.awt.image.*;
 import java.io.*;
 import javax.imageio.*;
+import java.util.*;
 
 /**
  * Représente le découpage d'une image en plusieurs morceaux.
@@ -12,15 +13,14 @@ import javax.imageio.*;
  */
 public class ImageCutter {
 
-    private final static String PATH_IMAGES = "/resources/images/";
-    private String name;
+    private String path;
     private String format;
     private int rows;
     private int columns;
 
-    public ImageCutter(String name, String format, int rows, int columns) {
-        this.name = name;
-        this.format = format;
+    public ImageCutter(String path, int rows, int columns) {
+        this.path = path;
+        this.format = path.substring((path.lastIndexOf('.')+1));
         this.rows = rows;
         this.columns = columns;
     }
@@ -30,8 +30,8 @@ public class ImageCutter {
      */
     public void cut() {
         try {
-            InputStream imageStream = getClass().getResourceAsStream(PATH_IMAGES + this.name + "." + this.format);
-            BufferedImage image = ImageIO.read(imageStream);
+            File imageFile = new File(this.path);
+            BufferedImage image = ImageIO.read(imageFile);
             int cellWidth = image.getWidth() / this.columns;
             int cellHeight = image.getHeight() / this.rows;
             BufferedImage[][] grid = new BufferedImage[this.rows][this.columns];
@@ -39,7 +39,7 @@ public class ImageCutter {
             this.extractSubImage(image, grid, cellWidth, cellHeight);
             this.saveSubImages(grid);
         } catch (Exception e) {
-            System.err.println("Error cutting image : " + e.getMessage());
+            throw new RuntimeException("Error cutting image : " + e.getMessage());
         }
     }
 
@@ -67,14 +67,16 @@ public class ImageCutter {
      * @param grid la grille d'images.
      */
     private void saveSubImages(BufferedImage[][] grid) {
-        File firstDir = new File(this.rows + "x" + this.columns+"/");
-        File secondDir = new File(firstDir, this.name + "/");
+        File firstDir = new File(this.rows + "x" + this.columns + "/");
+        Random random = new Random();
+        int randomInt = random.nextInt(1001);
+        File secondDir = new File(firstDir, randomInt + "/");
         int value = 1;
         if (!firstDir.exists()) firstDir.mkdirs();
         if (!secondDir.exists()) secondDir.mkdirs();
         for (int i = 0; i < this.rows; i++) {
             for (int j = 0; j < this.columns; j++) {
-                File outputfile = new File(this.rows + "x" + this.columns + "/" + this.name + "/" + value + "." + this.format);
+                File outputfile = new File(this.rows + "x" + this.columns + "/" + randomInt + "/" + value + "." + this.format);
                 value++;
                 try {
                     ImageIO.write(grid[i][j], this.format, outputfile);
