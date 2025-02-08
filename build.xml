@@ -1,35 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="taquin" default="compile" basedir=".">
-    
+
     <description>Builds, tests, and runs the project.</description>
 
     <property name="src.dir" value="src" />
     <property name="build.dir" value="classes" />
     <property name="doc.dir" value="doc" />
     <property name="dist.dir" value="dist" />
-    <property name="doc.dir" value="doc" />
-    <property name="application" value="${dist.dir}/taquin.jar" />
+    <property name="application-taquin" value="${dist.dir}/taquin.jar" />
+    <property name="application-splitter" value="${dist.dir}/splitter.jar" />
 
-    <target name="compile" depends="clean">
-        <javac srcdir="${src.dir}" destdir="${build.dir}" debug="true" includeantruntime="false" />
+    <target name="compile-taquin" depends="clean-taquin">
+        <javac srcdir="${src.dir}" destdir="${build.dir}" debug="true" includeantruntime="false" >
+            <exclude name="test/**" />
+            <exclude name="splitter/**" />
+        </javac>
     </target>
 
-    <target name="clean">
+    <target name="compile-splitter" depends="clean-splitter">
+        <javac srcdir="${src.dir}" destdir="${build.dir}" debug="true" includeantruntime="false" >
+            <exclude name="test/**" />
+            <exclude name="taquin/**" />
+        </javac>
+    </target>
+
+    <target name="clean-taquin">
         <delete dir="${build.dir}" />
         <mkdir dir="${build.dir}" />
-        <delete file="${application}" />
+        <delete file="${application-taquin}" />
     </target>
 
-    <target name="dist" depends="compile">
-        <jar destfile="${application}">
-            <fileset dir="${src.dir}/" includes="resources/image/*.png" />
+    <target name="clean-splitter">
+        <delete dir="${build.dir}" />
+        <mkdir dir="${build.dir}" />
+        <delete file="${application-splitter}" />
+    </target>
+
+    <target name="dist-taquin" depends="compile-taquin">
+        <jar destfile="${application-taquin}">
+            <fileset dir="${src.dir}" includes="**/*.properties,**/*.jpg,**/*.png"/>
             <fileset dir="${build.dir}" includes="**"/>
             <manifest>
                 <attribute name="Manifest-Version" value="1.0"/>
                 <attribute name="Created-By" value="Florian Pépin"/>
-                <attribute name="Main-Class" value="main.Main"/>
+                <attribute name="Main-Class" value="taquin.Main"/>
             </manifest>
         </jar>
+    </target>
+
+    <target name="dist-splitter" depends="compile-splitter">
+        <jar destfile="${application-splitter}">
+            <fileset dir="${src.dir}" includes="**/*.properties,**/*.jpg,**/*.png"/>
+            <fileset dir="${build.dir}" includes="**"/>
+            <manifest>
+                <attribute name="Manifest-Version" value="1.0"/>
+                <attribute name="Created-By" value="Florian Pépin"/>
+                <attribute name="Main-Class" value="splitter.Main"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run" depends="dist-taquin">
+        <java jar="${application-taquin}" fork="true"/>
     </target>
 
     <target name="javadoc">
@@ -39,12 +71,9 @@
         <javadoc destdir="${doc.dir}">
             <packageset dir="${src.dir}" defaultexcludes="yes">
                 <exclude name="test/**" />
+                <exclude name="resources/**" />
             </packageset>
         </javadoc>
-    </target>
-
-    <target name="run" depends="dist">
-      <java jar="${application}" fork="true" />
     </target>
 
 </project>
