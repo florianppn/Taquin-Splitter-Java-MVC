@@ -78,6 +78,11 @@ public class Taquin extends AbstractListenableModel {
         this.fireChange();
     }
 
+    /**
+     * Génère une grille de jeu.
+     *
+     * @return La grille de jeu.
+     */
     public int[][] generateTable() {
         int[][] table = new int[this.size][this.size];
         int value = 1;
@@ -91,6 +96,11 @@ public class Taquin extends AbstractListenableModel {
         return table;
     }
 
+    /**
+     * Mélange la grille de jeu.
+     *
+     * @param n Le nombre de coups pour mélanger la grille.
+     */
     public void shuffle(int n) {
         Random random = new Random();
         for (int i = 0; i < n; i++) {
@@ -106,6 +116,13 @@ public class Taquin extends AbstractListenableModel {
         }
     }
 
+    /**
+     * Récupère les voisins d'une case.
+     *
+     * @param x représente la position x de la case.
+     * @param y représente la position y de la case.
+     * @return La liste des voisins de la case.
+     */
     private List<Pair<Integer, Integer>> getNeighbors(int x, int y) {
         ArrayList<Pair<Integer, Integer>> neighbors = new ArrayList<>();
 
@@ -125,6 +142,12 @@ public class Taquin extends AbstractListenableModel {
         return x >= 0 && x < this.size && y >= 0 && y < this.size;
     }
 
+    /**
+     * Déplace une case de la grille.
+     *
+     * @param x représente la position x de la case à déplacer.
+     * @param y représente la position y de la case à déplacer.
+     */
     public void move(int x, int y) {
         if (this.isPosition(x, y) && this.isNeighbor(x, y)) {
             this.grid[this.x0][this.y0] = this.grid[x][y];
@@ -136,6 +159,11 @@ public class Taquin extends AbstractListenableModel {
         }
     }
 
+    /**
+     * Vérifie si la grille est résolue.
+     *
+     * @return Vrai si la grille est résolue, faux sinon.
+     */
     public boolean isSolved() {
         int value = 1;
         for (int i = 0; i < this.size-1; i++) {

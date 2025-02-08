@@ -6,6 +6,12 @@ import taquin.model.*;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Représente la fenêtre principale de l'application.
+ *
+ * @author Florian Pépin
+ * @version 1.0
+ */
 public class GUI extends JFrame {
 
     private Taquin taquin;
@@ -21,15 +27,21 @@ public class GUI extends JFrame {
         this.setVisible(true);
     }
 
+    /**
+     * Affiche le jeu.
+     */
     public void showGame() {
         this.getContentPane().removeAll();
         this.add(new StatisticView(this.taquin), BorderLayout.NORTH);
-        this.add(new GridView(this.taquin), BorderLayout.CENTER);
+        this.add(new GridWithImageView(this.taquin, "4x4/forest/"), BorderLayout.CENTER);
         this.addMouseListener(new MouseController(this.taquin, this));
         this.revalidate();
         this.repaint();
     }
 
+    /**
+     * Affiche l'écran de fin de jeu.
+     */
     public void showEndGame() {
         this.getContentPane().removeAll();
         this.add(new EndGameView(this.taquin), BorderLayout.CENTER);

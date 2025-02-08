@@ -1,3 +1,3 @@
 #!/bin/bash
 
-java -jar splitter.jar $1 $2 $3
+java -jar splitter.jar $1 $2 $3 $4

@@ -7,7 +7,7 @@ import java.awt.*;
 import javax.swing.*;
 
 /**
- * Représente la vue des statistiques du jeu.
+ * Représente les statistiques du joueur.
  *
  * @author Florian Pépin
  * @version 1.0

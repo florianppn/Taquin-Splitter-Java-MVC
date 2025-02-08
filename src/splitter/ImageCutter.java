@@ -14,11 +14,13 @@ public class ImageCutter {
 
     private final static String PATH_IMAGES = "/resources/images/";
     private String name;
+    private String format;
     private int rows;
     private int columns;
 
-    public ImageCutter(String name, int rows, int columns) {
+    public ImageCutter(String name, String format, int rows, int columns) {
         this.name = name;
+        this.format = format;
         this.rows = rows;
         this.columns = columns;
     }
@@ -28,7 +30,7 @@ public class ImageCutter {
      */
     public void cut() {
         try {
-            InputStream imageStream = getClass().getResourceAsStream(PATH_IMAGES + this.name);
+            InputStream imageStream = getClass().getResourceAsStream(PATH_IMAGES + this.name + "." + this.format);
             BufferedImage image = ImageIO.read(imageStream);
             int cellWidth = image.getWidth() / this.columns;
             int cellHeight = image.getHeight() / this.rows;
@@ -65,15 +67,17 @@ public class ImageCutter {
      * @param grid la grille d'images.
      */
     private void saveSubImages(BufferedImage[][] grid) {
-        File outputDir = new File(this.rows + "x" + this.columns+"/");
-        if (!outputDir.exists()) {
-            outputDir.mkdirs();
-        }
+        File firstDir = new File(this.rows + "x" + this.columns+"/");
+        File secondDir = new File(firstDir, this.name + "/");
+        int value = 1;
+        if (!firstDir.exists()) firstDir.mkdirs();
+        if (!secondDir.exists()) secondDir.mkdirs();
         for (int i = 0; i < this.rows; i++) {
             for (int j = 0; j < this.columns; j++) {
-                File outputfile = new File(this.rows + "x" + this.columns + "/" + "cutout_" + i + "_" + j + ".jpg");
+                File outputfile = new File(this.rows + "x" + this.columns + "/" + this.name + "/" + value + "." + this.format);
+                value++;
                 try {
-                    ImageIO.write(grid[i][j], "jpg", outputfile);
+                    ImageIO.write(grid[i][j], this.format, outputfile);
                 } catch (IOException e) {
                     throw new RuntimeException("Error saving images : " + e.getMessage());
                 }

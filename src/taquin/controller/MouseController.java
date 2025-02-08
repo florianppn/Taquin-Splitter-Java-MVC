@@ -31,6 +31,9 @@ public class MouseController implements MouseListener {
         this.finishGame();
     }
 
+    /**
+     * Vérifie si le jeu est terminé.
+     */
     public void finishGame() {
         if(this.taquin.isSolved()) {
             this.gui.showEndGame();
@@ -53,22 +56,22 @@ public class MouseController implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-        //
+        //non utilisé
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-        //
+        //non utilisé
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-        //
+        //non utilisé
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-        //
+        //non utilisé
     }
 
 }

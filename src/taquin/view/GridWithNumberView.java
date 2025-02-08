@@ -7,16 +7,16 @@ import java.awt.*;
 import javax.swing.*;
 
 /**
- * Représente la vue de la grille de jeu.
+ * Représente la grille du jeu avec les numéros.
  *
  * @author Florian Pépin
  * @version 1.0
  */
-public class GridView extends JPanel implements ModelListener {
+public class GridWithNumberView extends JPanel implements ModelListener {
 
     private Taquin taquin;
 
-    public GridView(Taquin taquin) {
+    public GridWithNumberView(Taquin taquin) {
         super();
         this.setBackground(Color.WHITE);
         this.setBorder(BorderFactory.createLineBorder(Color.BLACK));
