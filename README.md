@@ -27,14 +27,19 @@ Le but du jeu est de réorganiser les tuiles numérotées en les faisant glisser
 
 J'ai mis à votre disposition un splitter permettant de découper une image en plusieurs morceaux.
 
-(Soon...)
++ LINUX : lancer le fichier `dist/splitter.sh <chemin image> <lignes> <columns>`
+
++ WINDOWS : lancer le fichier `dist/splitter.bat <chemin image> <lignes> <columns>`
+
++ Exemple : `dist/splitter.sh /home/user/image.jpg 4 4`
++ Exemple : `dist/splitter.bat C:\Users\user\image.jpg 4 4`
++ Exemple : `dist/splitter.bat image.jpg 4 4`
 
 ## Contribuer
 
 + N'hésitez pas à signaler des bugs.
 
 + N'hésitez pas à améliorer le code existant.
-
 
 ## Licence
 
