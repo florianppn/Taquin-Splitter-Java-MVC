@@ -23,6 +23,12 @@ Le but du jeu est de réorganiser les tuiles numérotées en les faisant glisser
 
 + Vous pouvez également lancer le jeu avec ANT via la commande `ant run-taquin`
 
+## Comment mettre une image personnalisé
+
+J'ai mis à votre disposition un splitter permettant de découper une image en plusieurs morceaux.
+
+(Soon...)
+
 ## Contribuer
 
 + N'hésitez pas à signaler des bugs.
