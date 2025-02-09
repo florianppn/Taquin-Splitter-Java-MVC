@@ -68,3 +68,7 @@ Ce projet est sous licence [MIT].
 ## Captures d'écran
 
 ![Taquin](./screenshots/taquin.png)
+
+## Droits d'auteurs et crédits
+
++ Soon...
