@@ -15,10 +15,12 @@ import java.awt.*;
 public class GUI extends JFrame {
 
     private Taquin taquin;
+    private String folderPictures;
 
-    public GUI(Taquin taquin) {
+    public GUI(Taquin taquin, String folderPictures) {
         super("Taquin");
         this.taquin = taquin;
+        this.folderPictures = folderPictures;
         this.setLayout(new BorderLayout());
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(500, 500);
@@ -39,7 +41,7 @@ public class GUI extends JFrame {
         panel.add(new TimerView(this.taquin));
         panel.add(new RetryButtonController(this.taquin, timerController, this));
         this.add(panel, BorderLayout.NORTH);
-        this.add(new GridWithImageView(this.taquin, "forest/"), BorderLayout.CENTER);
+        this.add(new GridWithImageView(this.taquin, folderPictures), BorderLayout.CENTER);
         this.addMouseListener(new MouseController(this.taquin, timerController, this));
         this.revalidate();
         this.repaint();

@@ -17,15 +17,15 @@ public class GridWithImageView extends JPanel implements ModelListener {
 
     private final static String PATH = "/taquin/resources/cutout_images/4x4/";
     private Taquin taquin;
-    private String imageUrl;
+    private String folderPictures;
 
-    public GridWithImageView(Taquin taquin, String imageUrl) {
+    public GridWithImageView(Taquin taquin, String folderPictures) {
         super();
         this.setBackground(Color.WHITE);
         this.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         this.taquin = taquin;
         this.taquin.addModelListener(this);
-        this.imageUrl = imageUrl;
+        this.folderPictures = folderPictures;
     }
 
     @Override
@@ -44,7 +44,7 @@ public class GridWithImageView extends JPanel implements ModelListener {
                 } else {
                     g.drawRect(x, y, cellWidth, cellHeight);
                     try {
-                        Image img = new ImageIcon(Objects.requireNonNull(getClass().getResource(PATH + imageUrl + grid[i][j] + ".jpg"))).getImage();
+                        Image img = new ImageIcon(Objects.requireNonNull(getClass().getResource(PATH + folderPictures + grid[i][j] + ".jpg"))).getImage();
                         g.drawImage(img, x, y, cellWidth, cellHeight, null);
                     } catch (Exception e) {
                         g.drawString(Integer.toString(grid[i][j]), x + cellWidth / 2, y + cellHeight / 2);
