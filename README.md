@@ -63,4 +63,4 @@ Ce projet est sous licence [MIT].
 
 ## Captures d'écran
 
-Soon ...
+![Taquin]("./screenshots/taquin.png")
