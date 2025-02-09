@@ -15,7 +15,7 @@ Le but du jeu est de réorganiser les tuiles numérotées en les faisant glisser
 
 + Reconstituer un ordre numérique.
 
-+ Possiblité de mettre une image personnalisé.
++ Possiblité de mettre une image personnalisée.
 
 ## Comment lancer le jeu
 
