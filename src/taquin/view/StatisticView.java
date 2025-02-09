@@ -23,6 +23,7 @@ public class StatisticView extends JPanel implements ModelListener {
         this.taquin.addModelListener(this);
         this.setBackground(Color.WHITE);
         this.stats = new JLabel("Nombre de coups : " + this.taquin.getShot());
+        this.stats.setFont(new Font("Arial", Font.BOLD, 12));
         this.add(this.stats);
     }
 

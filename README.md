@@ -25,7 +25,7 @@ Les scripts permettant de lancer le jeu sont disponibles dans le dossier `dist`.
 
 + WINDOWS : lancer le fichier `./run.bat` pour lancer le jeu.
 
-## Comment mettre une image personnalisée
+## Comment découper une image
 
 J'ai mis à votre disposition un splitter permettant de découper une image en plusieurs morceaux. Il est disponible dans le dossier `dist`.
 
@@ -38,6 +38,10 @@ J'ai mis à votre disposition un splitter permettant de découper une image en p
 + JAVA : lancer la commande `java -jar splitter.jar <chemin image> <lignes> <colonnes>`.
     + Exemple : `java -jar splitter.jar /home/user/image.jpg 4 4`.
     + Exemple : `java -jar splitter.jar C:\Users\user\image.jpg 4 4`.
+
+## Comment paramétrer le jeu
+
++ Soon...
 
 ## Utilisation du fichier ANT
 
