@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"main"},{"l":"main.controller"},{"l":"main.model"},{"l":"main.utils"},{"l":"main.view"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"splitter"},{"l":"taquin"},{"l":"taquin.controller"},{"l":"taquin.model"},{"l":"taquin.utils"},{"l":"taquin.view"}];updateSearchResults();

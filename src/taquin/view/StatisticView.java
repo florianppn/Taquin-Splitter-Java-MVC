@@ -18,11 +18,10 @@ public class StatisticView extends JPanel implements ModelListener {
     private JLabel stats;
 
     public StatisticView(Taquin taquin) {
-        super();
+        super(new GridBagLayout());
         this.taquin = taquin;
         this.taquin.addModelListener(this);
         this.setBackground(Color.WHITE);
-        this.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         this.stats = new JLabel("Nombre de coups : " + this.taquin.getShot());
         this.add(this.stats);
     }

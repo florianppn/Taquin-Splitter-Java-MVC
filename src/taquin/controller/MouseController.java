@@ -14,10 +14,12 @@ import java.awt.event.*;
 public class MouseController implements MouseListener {
 
     private Taquin taquin;
+    private TimerController timerController;
     private GUI gui;
 
-    public MouseController(Taquin taquin, GUI gui) {
+    public MouseController(Taquin taquin, TimerController timerController, GUI gui) {
         this.taquin = taquin;
+        this.timerController = timerController;
         this.gui = gui;
     }
 
@@ -37,6 +39,7 @@ public class MouseController implements MouseListener {
     public void finishGame() {
         if(this.taquin.isSolved()) {
             this.gui.showEndGame();
+            this.timerController.stop();
         }
     }
 

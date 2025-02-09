@@ -1,5 +1,6 @@
-main
-main.controller
-main.model
-main.utils
-main.view
+splitter
+taquin
+taquin.controller
+taquin.model
+taquin.utils
+taquin.view

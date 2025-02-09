@@ -33,12 +33,14 @@ public class GUI extends JFrame {
     public void showGame() {
         this.getContentPane().removeAll();
         JPanel panel = new JPanel();
-        panel.setLayout(new GridLayout(1,2));
+        TimerController timerController = new TimerController(this.taquin);
+        panel.setLayout(new GridLayout(1,3));
         panel.add(new StatisticView(this.taquin));
-        panel.add(new RetryButtonController(this.taquin, this));
+        panel.add(new TimerView(this.taquin));
+        panel.add(new RetryButtonController(this.taquin, timerController, this));
         this.add(panel, BorderLayout.NORTH);
         this.add(new GridWithImageView(this.taquin, "forest/"), BorderLayout.CENTER);
-        this.addMouseListener(new MouseController(this.taquin, this));
+        this.addMouseListener(new MouseController(this.taquin, timerController, this));
         this.revalidate();
         this.repaint();
     }

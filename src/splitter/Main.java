@@ -23,12 +23,13 @@ public class Main {
             System.out.println("#####################################################################");
             System.out.println("Paramètres incorrects.\n");
             System.out.println("SUR LINUX:");
-            System.out.println("Usage: ./run-splitter.sh <chemin/image> <rows> <columns>\n");
+            System.out.println("Usage: ./run-splitter.sh <chemin image> <rows> <columns>\n");
             System.out.println("SUR WINDOWS:");
-            System.out.println("Usage: run-splitter.bat <chemin/image> <rows> <columns>\n");
+            System.out.println("Usage: ./run-splitter.bat <chemin image> <rows> <columns>\n");
             System.out.println("PAR DÉFAUT:");
-            System.out.println("Usage: java -jar splitter.jar <chemin/image> <rows> <columns>");
+            System.out.println("Usage: java -jar splitter.jar <chemin image> <rows> <columns>");
             System.out.println("#####################################################################\n");
         }
     }
+
 }
