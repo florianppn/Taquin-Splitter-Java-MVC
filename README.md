@@ -69,6 +69,12 @@ Ce projet est sous licence [MIT].
 
 ![Taquin](./screenshots/taquin.png)
 
-## Droits d'auteurs et crédits
+## Crédits des images
 
-+ Soon...
+J'ai utilisé des images provenant du site [Unsplash](https://unsplash.com/).
+
++ Photo du renard brun couché sur le rocher noir par [Dušan veverkolog](https://unsplash.com/fr/@veverkolog).
+
++ Photo d'une forêt de [Sebastian Unrau](https://unsplash.com/fr/@sebastian_unrau).
+
++ Photo de feuilles d'automne de [Jeremy Thomas](https://unsplash.com/fr/@jeremythomasphoto).
