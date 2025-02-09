@@ -37,11 +37,13 @@ J'ai mis à votre disposition un splitter permettant de découper une image en p
 
 + WINDOWS : lancer le fichier `./splitter.bat <chemin image> <lignes> <columns>`.
 
-+ ANT : utiliser la commande `ant dist-splitter` pour recompiler le splitter.
-
 + Exemple : `./splitter.sh /home/user/image.jpg 4 4`.
 + Exemple : `./splitter.bat C:\Users\user\image.jpg 4 4`.
 + Exemple : `./splitter.bat image.jpg 4 4`.
+
+Le fichier `build.xml` se trouve à la racine du projet. Il permet de compiler le projet via ANT.
+
++ ANT : utiliser la commande `ant dist-splitter` pour recompiler le splitter.
 
 ## Contribuer
 
