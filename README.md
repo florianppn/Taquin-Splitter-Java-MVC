@@ -35,7 +35,7 @@ J'ai mis à votre disposition un splitter permettant de découper une image en p
 + WINDOWS : lancer le fichier `./splitter.bat <chemin image> <lignes> <colonnes>`.
     + Exemple : `./splitter.bat C:\Users\user\image.jpg 4 4`.
     + Exemple : `./splitter.bat image.jpg 4 4`.
-+ JAVA : lancer la commande `java -jar splitter.jar <chemin image> <lignes> <colonnes>`.
++ DEFAUT : lancer la commande `java -jar splitter.jar <chemin image> <lignes> <colonnes>`.
     + Exemple : `java -jar splitter.jar /home/user/image.jpg 4 4`.
     + Exemple : `java -jar splitter.jar C:\Users\user\image.jpg 4 4`.
 
