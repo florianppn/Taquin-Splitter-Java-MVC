@@ -70,6 +70,8 @@ Ce projet est sous licence [MIT].
 
 ![Taquin](./screenshots/taquin.png)
 
+![Fin](./screenshots/fin.png)
+
 ## Crédits des photos
 
 J'ai utilisé des photos provenant du site [Unsplash](https://unsplash.com/).

@@ -23,6 +23,7 @@ public class TimerView extends JPanel implements ModelListener {
         this.taquin.addModelListener(this);
         this.label = new JLabel(this.getTextTime());
         this.label.setFont(new Font("Arial", Font.BOLD, 24));
+        this.setBackground(Color.WHITE);
         if (this.taquin.getTime() <= 15) {
             this.label.setForeground(Color.RED);
         } else {
