@@ -49,6 +49,8 @@ public class GUI extends JFrame {
 
     /**
      * Affiche l'écran de fin de jeu.
+     *
+     * @param state true si le joueur a gagné, false sinon.
      */
     public void showEndGame(boolean state) {
         this.getContentPane().removeAll();
