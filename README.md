@@ -76,6 +76,6 @@ J'ai utilisé des photos provenant du site [Unsplash](https://unsplash.com/).
 
 + Photo du [renard brun couché sur le rocher noir](https://unsplash.com/fr/photos/renard-brun-couche-sur-le-rocher-noir-nOsJYzXEG98) par [Dušan veverkolog](https://unsplash.com/fr/@veverkolog).
 
-+ Photo des [arbres sur la foret avec les rayons du soleil](https://unsplash.com/fr/photos/arbres-sur-la-foret-avec-les-rayons-du-soleil-sp-p7uuT0tw) de [Sebastian Unrau](https://unsplash.com/fr/@sebastian_unrau).
++ Photo des [arbres sur la foret avec les rayons du soleil](https://unsplash.com/fr/photos/arbres-sur-la-foret-avec-les-rayons-du-soleil-sp-p7uuT0tw) par [Sebastian Unrau](https://unsplash.com/fr/@sebastian_unrau).
 
-+ Photo [a plat de feuilles violettes et rouges](https://unsplash.com/fr/photos/photographie-a-plat-de-feuilles-violettes-et-rouges-O6N9RV2rzX8) de [Jeremy Thomas](https://unsplash.com/fr/@jeremythomasphoto).
++ Photo [a plat de feuilles violettes et rouges](https://unsplash.com/fr/photos/photographie-a-plat-de-feuilles-violettes-et-rouges-O6N9RV2rzX8) par [Jeremy Thomas](https://unsplash.com/fr/@jeremythomasphoto).
