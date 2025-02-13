@@ -1,4 +1,4 @@
-# Jeu du Taquin
+# Jeu du Taquin & Splitter
 
 ## Description
 
@@ -33,7 +33,7 @@ J'ai mis à votre disposition un splitter permettant de découper une image en p
 + WINDOWS : lancer le fichier `./splitter.bat <chemin image> <lignes> <colonnes>`.
     + Exemple : `./splitter.bat C:\Users\user\image.jpg 4 4`.
     + Exemple : `./splitter.bat image.jpg 4 4`.
-+ JAVA : lancer la commande `java -jar splitter.jar <chemin image> <lignes> <colonnes>`.
++ DEFAUT : lancer la commande `java -jar splitter.jar <chemin image> <lignes> <colonnes>`.
     + Exemple : `java -jar splitter.jar /home/user/image.jpg 4 4`.
     + Exemple : `java -jar splitter.jar C:\Users\user\image.jpg 4 4`.
 
@@ -48,13 +48,13 @@ J'ai mis à votre disposition un splitter permettant de découper une image en p
 
 Le fichier `build.xml` se trouve à la racine du projet. Il permet de compiler le projet via ANT.
 
-+ ANT : utiliser la commande `ant run` pour lancer et recompiler le jeu.
++ `ant run` pour lancer et recompiler le jeu.
 
-+ ANT : utiliser la commande `ant dist-taquin` pour recompiler le jeu.
++ `ant dist-taquin` pour recompiler le jeu.
 
-+ ANT : utiliser la commande `ant dist-splitter` pour recompiler le splitter.
++ `ant dist-splitter` pour recompiler le splitter.
 
-+ ANT : ouvrez le fichier `build.xml` pour plus d'informations.
++ Ouvrez le fichier `build.xml` pour plus d'informations.
 
 ## Contribuer
 
@@ -70,9 +70,9 @@ Ce projet est sous licence [MIT].
 
 ![Taquin](./screenshots/taquin.png)
 
-## Crédits des images
+## Crédits des photos
 
-J'ai utilisé des images provenant du site [Unsplash](https://unsplash.com/).
+J'ai utilisé des photos provenant du site [Unsplash](https://unsplash.com/).
 
 + Photo du renard brun couché sur le rocher noir par [Dušan veverkolog](https://unsplash.com/fr/@veverkolog).
 
