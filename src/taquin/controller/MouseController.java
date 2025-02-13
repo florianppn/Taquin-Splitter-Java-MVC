@@ -38,7 +38,7 @@ public class MouseController implements MouseListener {
      */
     public void finishGame() {
         if(this.taquin.isSolved()) {
-            this.gui.showEndGame();
+            this.gui.showEndGame(true);
             this.timerController.stop();
         }
     }

@@ -1,6 +1,7 @@
 package taquin.controller;
 
 import taquin.model.*;
+import taquin.view.*;
 
 import javax.swing.*;
 
@@ -13,10 +14,12 @@ import javax.swing.*;
 public class TimerController {
 
     private Taquin taquin;
+    private GUI gui;
     private Timer timer;
 
-    public TimerController(Taquin taquin) {
+    public TimerController(Taquin taquin, GUI gui) {
         this.taquin = taquin;
+        this.gui = gui;
         this.start();
     }
 
@@ -25,7 +28,11 @@ public class TimerController {
      */
     public void start() {
         this.timer = new Timer(1000, e -> {
-            this.taquin.incrementTime();
+            this.taquin.decrementTime();
+            if(this.taquin.getTime() <= 0) {
+                timer.stop();
+                this.gui.showEndGame(false);
+            }
         });
         timer.start();
     }

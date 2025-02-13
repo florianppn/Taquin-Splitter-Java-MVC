@@ -7,6 +7,7 @@
     <property name="build.dir" value="classes" />
     <property name="doc.dir" value="doc" />
     <property name="dist.dir" value="dist" />
+    <property name="config-taquin" value="${dist.dir}/config.properties" />
     <property name="application-taquin" value="${dist.dir}/taquin.jar" />
     <property name="application-splitter" value="${dist.dir}/splitter.jar" />
 
@@ -28,6 +29,7 @@
         <delete dir="${build.dir}" />
         <mkdir dir="${build.dir}" />
         <delete file="${application-taquin}" />
+        <delete file="${config-taquin}" />
     </target>
 
     <target name="clean-splitter">
@@ -38,7 +40,7 @@
 
     <target name="dist-taquin" depends="compile-taquin">
         <jar destfile="${application-taquin}">
-            <fileset dir="${src.dir}" includes="**/*.properties,**/*.jpg,**/*.png"/>
+            <fileset dir="${src.dir}" includes="**/*.jpg,**/*.png"/>
             <fileset dir="${build.dir}" includes="**"/>
             <manifest>
                 <attribute name="Manifest-Version" value="1.0"/>
@@ -46,6 +48,9 @@
                 <attribute name="Main-Class" value="taquin.Main"/>
             </manifest>
         </jar>
+        <copy todir="${dist.dir}" flatten="true">
+            <fileset dir="${src.dir}" includes="**/config.properties"/>
+        </copy>
     </target>
 
     <target name="dist-splitter" depends="compile-splitter">

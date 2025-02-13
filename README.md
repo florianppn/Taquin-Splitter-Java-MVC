@@ -15,8 +15,6 @@ Le but du jeu est de réorganiser les tuiles numérotées en les faisant glisser
 
 + Reconstituer un ordre numérique.
 
-+ Possiblité de mettre une image personnalisée.
-
 ## Comment lancer le jeu
 
 Les scripts permettant de lancer le jeu sont disponibles dans le dossier `dist`.
@@ -41,13 +39,16 @@ J'ai mis à votre disposition un splitter permettant de découper une image en p
 
 ## Comment paramétrer le jeu
 
-+ Soon...
++ Pour paramétrer le jeu, il suffit de modifier le fichier `config.properties` se trouvant dans le dossier `dist`.
+
++ Pour ajouter une nouvelle image vous devrez l'ajouter dans le dossier `src/taquin/resources/cutout_images/votreformat/vosimages`. 
+  + Vous devrez ensuite recompiler le projet avec ANT ou manuellement via le terminal.
 
 ## Utilisation du fichier ANT
 
 Le fichier `build.xml` se trouve à la racine du projet. Il permet de compiler le projet via ANT.
 
-+ ANT : utiliser la commande `ant run` pour lancer le jeu.
++ ANT : utiliser la commande `ant run` pour lancer et recompiler le jeu.
 
 + ANT : utiliser la commande `ant dist-taquin` pour recompiler le jeu.
 

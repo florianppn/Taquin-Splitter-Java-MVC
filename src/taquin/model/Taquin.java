@@ -20,8 +20,9 @@ public class Taquin extends AbstractListenableModel {
     private int[][] grid;
     private int shot;
     private long time;
+    private long savedTime;
 
-    public Taquin(int size) {
+    public Taquin(int size, int time) {
         this.size = size;
         this.x0 = size-1;
         this.y0 = size-1;
@@ -29,6 +30,8 @@ public class Taquin extends AbstractListenableModel {
         this.clickY = -1;
         this.grid = this.generateTable();
         this.shot = 0;
+        this.time = time;
+        this.savedTime = time;
     }
 
     public int[][] getGrid() {
@@ -84,10 +87,10 @@ public class Taquin extends AbstractListenableModel {
     }
 
     /**
-     * Incrémente le temps de jeu.
+     * Décrémente le temps de jeu.
      */
-    public void incrementTime() {
-        this.time++;
+    public void decrementTime() {
+        this.time--;
         this.fireChange();
     }
 
@@ -192,7 +195,7 @@ public class Taquin extends AbstractListenableModel {
      */
     public void reset() {
         this.shot = 0;
-        this.time = 0;
+        this.time = this.savedTime;
         this.x0 = this.size-1;
         this.y0 = this.size-1;
         this.grid = this.generateTable();

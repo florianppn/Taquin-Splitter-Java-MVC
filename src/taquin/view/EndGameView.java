@@ -14,14 +14,23 @@ import java.awt.*;
 public class EndGameView extends JPanel {
 
     private Taquin taquin;
+    private boolean state;
 
-    public EndGameView(Taquin taquin) {
+    public EndGameView(Taquin taquin, boolean state) {
         super();
         this.taquin = taquin;
         this.setLayout(new BorderLayout());
-        JLabel label = new JLabel("Vous avez gagné !", SwingConstants.CENTER);
+        JLabel label = this.createLabel();
         label.setFont(new Font("Serif", Font.BOLD, 48));
         this.add(label, BorderLayout.CENTER);
+    }
+
+    public JLabel createLabel() {
+        if (this.state) {
+            return new JLabel("Vous avez gagné !", SwingConstants.CENTER);
+        } else {
+            return new JLabel("Vous avez perdu !", SwingConstants.CENTER);
+        }
     }
 
 }

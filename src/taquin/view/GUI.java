@@ -35,7 +35,7 @@ public class GUI extends JFrame {
     public void showGame() {
         this.getContentPane().removeAll();
         JPanel panel = new JPanel();
-        TimerController timerController = new TimerController(this.taquin);
+        TimerController timerController = new TimerController(this.taquin, this);
         panel.setLayout(new GridLayout(1,3));
         panel.add(new StatisticView(this.taquin));
         panel.add(new TimerView(this.taquin));
@@ -50,14 +50,14 @@ public class GUI extends JFrame {
     /**
      * Affiche l'écran de fin de jeu.
      */
-    public void showEndGame() {
+    public void showEndGame(boolean state) {
         this.getContentPane().removeAll();
         JPanel panel = new JPanel();
         panel.setLayout(new GridLayout(1,2));
         panel.add(new StatisticView(this.taquin));
         panel.add(new RetryButtonController(this.taquin, this));
         this.add(panel, BorderLayout.NORTH);
-        this.add(new EndGameView(this.taquin), BorderLayout.CENTER);
+        this.add(new EndGameView(this.taquin, state), BorderLayout.CENTER);
         this.revalidate();
         this.repaint();
     }
