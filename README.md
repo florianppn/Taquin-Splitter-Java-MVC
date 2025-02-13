@@ -74,8 +74,8 @@ Ce projet est sous licence [MIT].
 
 J'ai utilisé des photos provenant du site [Unsplash](https://unsplash.com/).
 
-+ Photo du renard brun couché sur le rocher noir par [Dušan veverkolog](https://unsplash.com/fr/@veverkolog).
++ Photo du [renard brun couché sur le rocher noir](https://unsplash.com/fr/photos/renard-brun-couche-sur-le-rocher-noir-nOsJYzXEG98) par [Dušan veverkolog](https://unsplash.com/fr/@veverkolog).
 
-+ Photo d'une forêt de [Sebastian Unrau](https://unsplash.com/fr/@sebastian_unrau).
++ Photo des [arbres sur la foret avec les rayons du soleil](https://unsplash.com/fr/photos/arbres-sur-la-foret-avec-les-rayons-du-soleil-sp-p7uuT0tw) de [Sebastian Unrau](https://unsplash.com/fr/@sebastian_unrau).
 
-+ Photo de feuilles d'automne de [Jeremy Thomas](https://unsplash.com/fr/@jeremythomasphoto).
++ Photo [a plat de feuilles violettes et rouges](https://unsplash.com/fr/photos/photographie-a-plat-de-feuilles-violettes-et-rouges-O6N9RV2rzX8) [Jeremy Thomas](https://unsplash.com/fr/@jeremythomasphoto).
