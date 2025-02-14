@@ -2,7 +2,7 @@
 
 ## Description
 
-Jeu du Taquin implémenté en Java à l'aide de la bibliothèque graphique Swing.
+Jeu du Taquin implémenté en Java à l'aide de la bibliothèque graphique Swing. Pour ce projet j'ai utilisé l'architecture MVC ainsi que le pattern observer.
 
 ## Règles du jeu
 
