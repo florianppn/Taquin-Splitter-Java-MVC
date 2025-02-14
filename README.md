@@ -19,20 +19,20 @@ Le but du jeu est de réorganiser les tuiles numérotées en les faisant glisser
 
 Les scripts permettant de lancer le jeu sont disponibles dans le dossier `dist`.
 
-+ LINUX : lancer le fichier `./run.sh` pour lancer le jeu.
++ LINUX : lancer le fichier `./run-taquin.sh` pour lancer le jeu.
 
-+ WINDOWS : lancer le fichier `./run.bat` pour lancer le jeu.
++ WINDOWS : lancer le fichier `./run-taquin.bat` pour lancer le jeu.
 
 ## Comment découper une image
 
 J'ai mis à votre disposition un splitter permettant de découper une image en plusieurs morceaux. Il est disponible dans le dossier `dist`.
 
-+ LINUX : lancer le fichier `./splitter.sh <chemin image> <lignes> <colonnes>`.
-    + Exemple : `./splitter.sh /home/user/image.jpg 4 4`.
-    + Exemple : `./splitter.sh image.jpg 4 4`.
-+ WINDOWS : lancer le fichier `./splitter.bat <chemin image> <lignes> <colonnes>`.
-    + Exemple : `./splitter.bat C:\Users\user\image.jpg 4 4`.
-    + Exemple : `./splitter.bat image.jpg 4 4`.
++ LINUX : lancer le fichier `./run-splitter.sh <chemin image> <lignes> <colonnes>`.
+    + Exemple : `./run-splitter.sh /home/user/image.jpg 4 4`.
+    + Exemple : `./run-splitter.sh image.jpg 4 4`.
++ WINDOWS : lancer le fichier `./run-splitter.bat <chemin image> <lignes> <colonnes>`.
+    + Exemple : `./run-splitter.bat C:\Users\user\image.jpg 4 4`.
+    + Exemple : `./run-splitter.bat image.jpg 4 4`.
 + DEFAUT : lancer la commande `java -jar splitter.jar <chemin image> <lignes> <colonnes>`.
     + Exemple : `java -jar splitter.jar /home/user/image.jpg 4 4`.
     + Exemple : `java -jar splitter.jar C:\Users\user\image.jpg 4 4`.
