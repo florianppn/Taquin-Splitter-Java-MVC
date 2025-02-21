@@ -64,7 +64,7 @@ Le fichier `build.xml` se trouve à la racine du projet. Il permet de compiler l
 
 ## Licence
 
-Ce projet est sous licence [MIT].
+Ce projet est sous licence [MIT](./LICENSE.md).
 
 ## Captures d'écran
 
